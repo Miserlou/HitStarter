@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <title>Project name</title>
+    <title>HitStarter</title>
     <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css" />
      <style>
@@ -21,12 +21,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Project name</a>
+					<a class="brand" href="#">Hit<span style="color: #ff0000">Starter</span></a>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/account">Account</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -34,13 +34,13 @@
     </div>
     <!-- end navbar -->
 
-    <div class="container">
+		<div class="container">
     {% block content %}
     {% endblock %}
     </div>
     <!-- Le javascript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- We're going to be operating this site over Tor, so lets just kill the JS entirely. 
     <script src="{{ STATIC_URL }}boostrap/js/jquery.js"></script>
     <script src="{{ STATIC_URL }}boostrap/js/bootstrap-transition.js"></script>
     <script src="{{ STATIC_URL }}boostrap/js/bootstrap-alert.js"></script>
@@ -54,7 +54,7 @@
     <script src="{{ STATIC_URL }}boostrap/js/bootstrap-collapse.js"></script>
     <script src="{{ STATIC_URL }}boostrap/js/bootstrap-carousel.js"></script>
     <script src="{{ STATIC_URL }}boostrap/js/bootstrap-typeahead.js"></script>
-
+		Placed at the end of the document so the pages load faster -->
 
 </body>
 </html>

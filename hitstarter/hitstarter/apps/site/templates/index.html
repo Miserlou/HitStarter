@@ -1,4 +1,23 @@
-{% extends "base.html" %}
+{% extends "app_base.html" %}
 {% block content %}
-Welcome to my project!
+
+<div class="span8 offset2">
+    <br /><br />
+    <img src="{{STATIC_URL}}bootstrap/img/logo.png">
+</div>
+
+<div class="span8 offset2">
+    <br /><br /><br />
+    <p class="lead">
+        <i>Hit<span style="color: #ff0000">Starter</span></i> is a public space for anonymous crowdfunding. Some projects are just a bit too ambitious for the normal internet, so we're building a space where people can raise funds for creative ideas which need a bit more discretion.
+    </p>
+</div>
+
+<div class="span8 offset2">
+    <br /><br />
+    <p class="lead">
+        <i>Coming "soon"..</i>
+    </p>
+</div>
+
 {% endblock %}
