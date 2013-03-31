@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Project name</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css" />
+     <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Project name</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <!-- end navbar -->
+
+    <div class="container">
+    {% block content %}
+    {% endblock %}
+    </div>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ STATIC_URL }}boostrap/js/jquery.js"></script>
+    <script src="{{ STATIC_URL }}boostrap/js/bootstrap-transition.js"></script>
+    <script src="{{ STATIC_URL }}boostrap/js/bootstrap-alert.js"></script>
+    <script src="{{ STATIC_URL }}boostrap/js/bootstrap-modal.js"></script>
+    <script src="{{ STATIC_URL }}boostrap/js/bootstrap-dropdown.js"></script>
+    <script src="{{ STATIC_URL }}boostrap/js/bootstrap-scrollspy.js"></script>
+    <script src="{{ STATIC_URL }}boostrap/js/bootstrap-tab.js"></script>
+    <script src="{{ STATIC_URL }}boostrap/js/bootstrap-tooltip.js"></script>
+    <script src="{{ STATIC_URL }}boostrap/js/bootstrap-popover.js"></script>
+    <script src="{{ STATIC_URL }}boostrap/js/bootstrap-button.js"></script>
+    <script src="{{ STATIC_URL }}boostrap/js/bootstrap-collapse.js"></script>
+    <script src="{{ STATIC_URL }}boostrap/js/bootstrap-carousel.js"></script>
+    <script src="{{ STATIC_URL }}boostrap/js/bootstrap-typeahead.js"></script>
+
+
+</body>
+</html>
