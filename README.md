@@ -1,3 +1,5 @@
+![logo](http://i.imgur.com/3MLMXfI.png)
+
 HitStarter
 ==========
 
