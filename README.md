@@ -27,3 +27,13 @@ Psst.. want to get involved? This project isn't going to get very far off the gr
 Get in touch if you'd like to be involved with this project! I'm willing to work as the PM if somebody else is
 willing to handle ops.
 
+## TODO
+
+* Finish Coinbase integration
+* Deploy
+* Move from Coinbase to internal wallet
+
+## Screenies
+
+![screenie](http://i.imgur.com/AjD2n27.png)
+![screenie2](http://i.imgur.com/m75Ekti.png)
