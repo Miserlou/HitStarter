@@ -11,7 +11,9 @@ HitStarter
 # Support HitStarter!
 
 ![donate](http://i.imgur.com/FX1NBgT.png)
+
 ![qr](http://i.imgur.com/ugFaf22.png)
+
 [Donate BitCoins here!](https://coinbase.com/checkouts/0215a35080d1c331b12eb76ddd018380)
 
 Or just send them to..
