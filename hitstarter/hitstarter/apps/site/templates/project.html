@@ -5,11 +5,37 @@
 
 <h1>{{project.title}}</h1>
 
-<img src="{{MEDIA_URL}}{{project.thumbnail}}">
-{{MEDIA_URL}}{{project.thumbnail}}
+<br />
 
+<img src="{{MEDIA_URL}}{{project.thumbnail}}" class="img-polaroid" style="max-height:300px">
+
+<br /><br />
 <p class="lead">
 {{project.description}}
+</p>
+<br />
+
+
+<div class="progress progress-success progress-striped">
+    <div class="bar" style="width: 40%"></div>
+</div>
+<h3>Raised ฿<i>40</i> of ฿<i>100</i></h3>
+<br />
+
+<p>
+
+<pre>
+    {{project.wallet}}
+</pre>
+
+</p>
+
+<br />
+
+<p>
+
+<a href="https://coinbase.com/checkouts/0215a35080d1c331b12eb76ddd018380" class="btn btn-large btn-primary">Fund this Project!</a>
+
 </p>
 
 </div>

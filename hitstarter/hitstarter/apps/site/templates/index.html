@@ -16,14 +16,19 @@
 <div class="span12">
     <h2>Featured Projects</h2>
 
+    <br />
+
     <div class="row">
         {% for p in projects %}
         <div class="span4">
 
             <div class="well">
             
-                <img src="" class="thumbnail">
-                <h3><a href="/p/{{p.pk}}/{{p.slug}}">{{p.title}}</a></h3>
+                <a href="/p/{{p.pk}}/{{p.slug}}">
+                <div class="center">
+                <img src="{{MEDIA_URL}}{{p.thumbnail}}" class="img-polaroid" style="max-height:150px; text-align: center; margin: 0 auto;">
+                </div>
+                <h3>{{p.title}}</a></h3>
                 {{p.description}}
 
             </div>
