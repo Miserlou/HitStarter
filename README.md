@@ -20,3 +20,10 @@ Or just send them to..
 >    1JKvCnFEESTY2TvRsxy8ezisr198pLMDqZ
 
 Hosted deployment launching soon.
+
+## Join in!
+
+Psst.. want to get involved? This project isn't going to get very far off the ground unless we get a bit more support.
+Get in touch if you'd like to be involved with this project! I'm willing to work as the PM if somebody else is
+willing to handle ops.
+
