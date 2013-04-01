@@ -145,6 +145,7 @@ INSTALLED_APPS = (
 
     # my apps
     'userena',
+    'taggit',
 
     # main app
     'hitstarter.apps.site',

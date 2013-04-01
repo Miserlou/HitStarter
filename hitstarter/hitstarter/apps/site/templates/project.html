@@ -1,0 +1,17 @@
+{% extends "app_base.html" %}
+{% block content %}
+
+<div class="span8 offset2">
+
+<h1>{{project.title}}</h1>
+
+<img src="{{MEDIA_URL}}{{project.thumbnail}}">
+{{MEDIA_URL}}{{project.thumbnail}}
+
+<p class="lead">
+{{project.description}}
+</p>
+
+</div>
+
+{% endblock %}

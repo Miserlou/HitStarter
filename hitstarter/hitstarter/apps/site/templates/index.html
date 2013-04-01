@@ -9,14 +9,37 @@
 <div class="span8 offset2">
     <br /><br /><br />
     <p class="lead">
-        <i>Hit<span style="color: #ff0000">Starter</span></i> is a public space for anonymous crowdfunding. Some projects are just a bit too ambitious for the normal internet, so we're building a space where people can raise funds for creative ideas which need a bit more discretion.
+        <i>Hit<span style="color: #ff0000">Starter</span></i> is a hidden space for anonymous crowdfunding. Some projects are just a bit too ambitious for the normal internet, so we're building a place where people can raise funds for creative ideas which need a bit more discretion.
     </p>
 </div>
 
+<div class="span12">
+    <h2>Featured Projects</h2>
+
+    <div class="row">
+        {% for p in projects %}
+        <div class="span4">
+
+            <div class="well">
+            
+                <img src="" class="thumbnail">
+                <h3><a href="/p/{{p.pk}}/{{p.slug}}">{{p.title}}</a></h3>
+                {{p.description}}
+
+            </div>
+           
+
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
 <div class="span8 offset2">
     <br /><br />
-    <p class="lead">
-        <i>Coming "soon"..</i>
+    <p>
+        Psst.. want to get involved? This project isn't going to get very far off the ground unless we get a bit more support. <a href="https://github.com/Miserlou/HitStarter">Find us on GitHub</a> and get in touch if you'd like to be involved with this project!
     </p>
 </div>
 
