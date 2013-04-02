@@ -30,10 +30,15 @@ willing to handle ops.
 ## Installation
 
 >    virtualenv env
+
 >    source ./env/bin/activate
+
 >    pip install -r requirements.txt
+
 >    ./hitstarter/bin/develop.py syncdb
+
 >    ./hitstarter/bin/develop.py migrate
+
 >    ./hitstarter/bin/develop.py runserver
 
 ## TODO
