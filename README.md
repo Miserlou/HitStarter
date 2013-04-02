@@ -27,6 +27,15 @@ Psst.. want to get involved? This project isn't going to get very far off the gr
 Get in touch if you'd like to be involved with this project! I'm willing to work as the PM if somebody else is
 willing to handle ops.
 
+## Installation
+
+>    virtualenv env
+>    source ./env/bin/activate
+>    pip install -r requirements.txt
+>    ./hitstarter/bin/develop.py syncdb
+>    ./hitstarter/bin/develop.py migrate
+>    ./hitstarter/bin/develop.py runserver
+
 ## TODO
 
 * Finish Coinbase integration
