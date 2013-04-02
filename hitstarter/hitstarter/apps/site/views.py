@@ -30,7 +30,9 @@ def project(request, project_id):
 
     project = projects.get_project_by_id(project_id)
 
+    raised = 0
     return render_to_response('project.html', {
             'project': project,
+            'raised': raised,
         },
         context_instance=RequestContext(request))

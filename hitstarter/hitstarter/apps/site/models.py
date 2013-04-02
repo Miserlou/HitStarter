@@ -66,6 +66,8 @@ class Project(models.Model):
                                     blank=True,
                                     null=True)  
 
+    target = models.IntegerField()
+
     tags = TaggableManager()
 
     # Thumbnail. We might have to nuke this.
