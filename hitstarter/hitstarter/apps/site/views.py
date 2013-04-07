@@ -17,6 +17,8 @@ from django.db import connection, transaction
 from hitstarter.apps.site.models import Project
 import hitstarter.apps.site.models as projects
 
+import requests
+
 def home(request):
 
     featured_projects = projects.get_featured_projects()
@@ -31,7 +33,14 @@ def project(request, project_id):
 
     project = projects.get_project_by_id(project_id)
 
-    raised = 0
+    raised = '-1'
+
+    res  = requests.get('https://coinbase.com/api/v1/account/balance?api_key=%s' % settings.COINBASE_API_KEY)     
+    try:
+        raised = res.json()['amount']
+    except Exception, e:
+        raised = '-1'           
+
     return render_to_response('project.html', {
             'project': project,
             'raised': raised,

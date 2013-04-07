@@ -48,4 +48,9 @@
     </p>
 </div>
 
+{% if not is_onion %}
+<div class="span8 offset2">
+    <small>It looks like you're visiting this site in <b>cleartext</b> mode. To use HitStarter anonymously, head to <a href="http://htstrtc3uttwk4li.onion/">htstrtc3uttwk4li.onion</a>.</small>
+{% endif %}
+
 {% endblock %}
