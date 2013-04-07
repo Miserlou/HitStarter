@@ -22,7 +22,8 @@ def home(request):
     featured_projects = projects.get_featured_projects()
 
     return render_to_response('index.html', {
-        'projects': featured_projects
+        'projects': featured_projects,
+        'is_onion': is_onion(request)
         },
         context_instance=RequestContext(request))
 
@@ -34,5 +35,13 @@ def project(request, project_id):
     return render_to_response('project.html', {
             'project': project,
             'raised': raised,
+            'is_onion': is_onion(request)
         },
         context_instance=RequestContext(request))
+
+
+def is_onion(request):
+    if 'htstrtc3uttwk4li.onion' == request.META['HTTP_HOST'][:22]:
+        return True
+    else:
+        return False
