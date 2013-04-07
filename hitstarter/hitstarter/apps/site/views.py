@@ -33,21 +33,30 @@ def project(request, project_id):
 
     project = projects.get_project_by_id(project_id)
 
-    raised = '-1'
+    raised = '0'
 
     res  = requests.get('https://coinbase.com/api/v1/account/balance?api_key=%s' % settings.COINBASE_API_KEY)     
     try:
         raised = res.json()['amount']
     except Exception, e:
-        raised = '-1'           
+        raised = '0'
+
+    percent = (float(raised)/float(project.target)) * 100       
 
     return render_to_response('project.html', {
             'project': project,
             'raised': raised,
+            'percent': percent,
             'is_onion': is_onion(request)
         },
         context_instance=RequestContext(request))
 
+def about(request):
+
+    return render_to_response('about.html', {
+        'is_onion': is_onion(request)
+        },
+        context_instance=RequestContext(request))
 
 def is_onion(request):
     if 'htstrtc3uttwk4li.onion' == request.META['HTTP_HOST'].strip():
