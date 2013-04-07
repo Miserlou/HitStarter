@@ -50,7 +50,7 @@ def project(request, project_id):
 
 
 def is_onion(request):
-    if 'htstrtc3uttwk4li.onion' in request.META['HTTP_HOST'][:30]:
+    if 'htstrtc3uttwk4li.onion' in request.META['HTTP_HOST']:
         return True
     else:
         return False
