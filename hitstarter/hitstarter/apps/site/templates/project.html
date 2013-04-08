@@ -10,6 +10,30 @@
 <img src="{{MEDIA_URL}}{{project.thumbnail}}" class="img-polaroid" style="max-height:300px">
 
 <br /><br />
+
+<div class="progress progress-success progress-striped">
+    <div class="bar" style="width: {{percent}}%"></div>
+</div>
+<h3>Raised ฿<i>{{raised}}</i> of ฿<i>{{project.target}}</i></h3>
+<br />
+
+<p>
+
+<pre>
+    {{project.wallet}}
+</pre>
+
+</p>
+
+<br />
+
+<p>
+
+<a href="https://coinbase.com/checkouts/0215a35080d1c331b12eb76ddd018380" class="btn btn-large btn-primary pull-right">Fund this Project! →</a>
+<br />
+
+<br /><br />
+
 <p class="lead">
 {{project.description|safe}}
 </p>
@@ -35,9 +59,24 @@
 <p>
 
 <a href="https://coinbase.com/checkouts/0215a35080d1c331b12eb76ddd018380" class="btn btn-large btn-primary pull-right">Fund this Project! →</a>
-
+<br /><br /><br />
 </p>
 
+
 </div>
+
+<div class="span8 offset2">
+    <br /><br />
+    <p>
+        Psst.. want to get involved? This project isn't going to get very far off the ground unless we get a bit more support. <a href="https://github.com/Miserlou/HitStarter">Find us on GitHub</a> and get in touch if you'd like to be involved with this project!
+    </p>
+</div>
+
+{% if not is_onion %}
+<div class="span8 offset2">
+    <small>To use HitStarter anonymously, head to <a href="http://htstrtc3uttwk4li.onion/">htstrtc3uttwk4li.onion</a>.</small>
+    <br /><br /><br />
+</div>
+{% endif %}
 
 {% endblock %}
