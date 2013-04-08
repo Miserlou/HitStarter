@@ -17,7 +17,7 @@ HitStarter
 Or just send them to..
 >    1JKvCnFEESTY2TvRsxy8ezisr198pLMDqZ
 
-Hosted deployment launching soon.
+Thanks very much!
 
 ## Join in!
 
