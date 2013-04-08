@@ -6,8 +6,6 @@ HitStarter
  HitStarter is a hidden space for anonymous crowdfunding. Some projects are just a bit too ambitious for the normal
  internet, so we're building a place where people can raise funds for creative ideas which need a bit more discretion.
 
- Coming "soon"..
-
 # Support HitStarter!
 
 ![donate](http://i.imgur.com/FX1NBgT.png)
@@ -43,8 +41,6 @@ willing to handle ops.
 
 ## TODO
 
-* Finish Coinbase integration
-* Deploy
 * Move from Coinbase to internal wallet
 
 ## Screenies
