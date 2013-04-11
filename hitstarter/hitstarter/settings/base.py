@@ -5,7 +5,7 @@ import os
 BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 PROJECT_DIR = os.path.dirname(BASE_DIR)
 
-DEBUG = True
+DEBUG = True 
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -202,4 +202,9 @@ LOGOUT_URL = '/accounts/signout/'
 USERENA_ACTIVATION_REQUIRED = False
 USERENA_SIGNIN_AFTER_SIGNUP = True
 USERENA_SIGNIN_REDIRECT_URL = "/dash"
+
 COINBASE_API_KEY = ''
+STRIPE_API_KEY = ''
+STRIPE_API_SECRET_KEY = ''
+STRIPE_DEBUG_API_KEY = ''
+STRIPE_DEBUG_API_SECRET_KEY = ''
