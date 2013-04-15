@@ -22,36 +22,28 @@
 <div class="progress progress-success progress-striped">
     <div class="bar" style="width: {{percent}}%"></div>
 </div>
+
+
 <h3>Raised ฿<i>{{raised}}</i> of ฿<i>{{project.target}}</i></h3>
 <br />
 
-<p>
-
-<pre>
-    {{project.wallet}}
-</pre>
-
-</p>
-
-<br />
-
-<p>
 
 <div class="row">
-
-<div class="span4 offset5">
-<a href="https://coinbase.com/checkouts/0215a35080d1c331b12eb76ddd018380" class="btn btn-large btn-primary">Fund this Project with BitCoin! →</a>
+    <div class="span4">
+         <pre>Address: {{project.wallet}}</pre>
+    </div>
+    <div class="span4">
+           <a href="https://coinbase.com/checkouts/0215a35080d1c331b12eb76ddd018380" class="btn btn-large btn-primary">Fund this Project with BitCoin →</a>
+    </div>
 </div>
-</div>
-<br />
 
 {% if not is_onion %}
 
 <div class="row">
 
-<div class="span4 offset5">
+<div class="span3 offset1">
 
-<form class="form-inline">
+<form class="form-inline pull-right">
         <br />
 
     <div class="input-prepend input-append">
@@ -60,18 +52,22 @@
     <span class="add-on">.00</span>
     </div>
 
+</div>
+
+<div class="span4">
+
     <br />
 
-    <button class="btn btn-large btn-primary" type="button">Fund this Project with Credit Card! →</button>
+    <button id="cc1" class="btn btn-large btn-primary" type="button">Fund this Project with Credit Card →</button>
 
 </form>
 
 </div>
 
 </div>
+
 {% endif %}
 
-<br /><br />
 
 <p class="lead">
 {{project.description|safe}}
@@ -85,21 +81,45 @@
 <h3>Raised ฿<i>{{raised}}</i> of ฿<i>{{project.target}}</i></h3>
 <br />
 
-<p>
+<div class="row">
+    <div class="span4">
+         <pre>Address: {{project.wallet}}</pre>
+    </div>
+    <div class="span4">
+           <a href="https://coinbase.com/checkouts/0215a35080d1c331b12eb76ddd018380" class="btn btn-large btn-primary">Fund this Project with BitCoin →</a>
+    </div>
+</div>
 
-<pre>
-    {{project.wallet}}
-</pre>
+{% if not is_onion %}
 
-</p>
+<div class="row">
 
-<br />
+<div class="span3 offset1">
 
-<p>
+<form class="form-inline pull-right">
+        <br />
 
-<a href="https://coinbase.com/checkouts/0215a35080d1c331b12eb76ddd018380" class="btn btn-large btn-primary pull-right">Fund this Project! →</a>
-<br /><br /><br />
-</p>
+    <div class="input-prepend input-append">
+    <span class="add-on">$</span>
+    <input class="span2" id="id_value2" name="value"  type="text" placeholder="Funding amount">
+    <span class="add-on">.00</span>
+    </div>
+
+</div>
+
+<div class="span4">
+
+    <br />
+
+    <button id="cc2" class="btn btn-large btn-primary" type="button">Fund this Project with Credit Card →</button>
+
+</form>
+
+</div>
+
+</div>
+
+{% endif %}
 
 
 </div>
@@ -116,6 +136,77 @@
     <small>To use HitStarter anonymously, head to <a href="http://htstrtc3uttwk4li.onion/">htstrtc3uttwk4li.onion</a>.</small>
     <br /><br /><br />
 </div>
+{% endif %}
+
+
+{% if not is_onion %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://checkout.stripe.com/v2/checkout.js"></script>
+
+<script>
+
+$('#cc1').click(function(){
+
+      var token = function(res){
+        $('#id_stripeToken').val(res.id);
+        $('#id_fundValue').val( $('#id_value').val() * 100);
+        $('#stripeForm').submit();
+      };
+
+      var pennies_cost = $('#id_value').val() * 100;
+      StripeCheckout.open({
+        key:         '{{api_key}}',
+        address:     false,
+        amount:      pennies_cost,
+        name:        'Fund {{project.title}}',
+        description: 'A Hitstarter Donation',
+        panelLabel:  'Fund',  
+        token:       token
+      });
+
+      return false;
+
+
+    });
+</script>
+
+<script>
+
+$('#cc2').click(function(){
+
+      var token = function(res){
+        $('#id_stripeToken').val(res.id);
+        $('#id_fundValue').val( $('#id_value2').val() * 100);
+        $('#stripeForm').submit();
+      };
+
+      var pennies_cost = $('#id_value2').val() * 100;
+      StripeCheckout.open({
+        key:         '{{api_key}}',
+        address:     false,
+        amount:      pennies_cost,
+        name:        'Fund {{project.title}}',
+        description: 'A Hitstarter Donation',
+        panelLabel:  'Fund',  
+        token:       token
+      });
+
+      return false;
+
+
+    });
+</script>
+
+      <div class="hide">
+      <form action="/fund/{{project.pk}}/" method="post" id="stripeForm" enctype="multipart/form-data">
+          {%csrf_token%}
+          <input type="text" id="id_stripeToken" name="stripeToken" />
+          <input type="text" id="id_fundValue" name="fundValue" />
+
+          <p><input type="submit" value="Send" /></p>
+      </form>
+      </div>
+
 {% endif %}
 
 {% endblock %}

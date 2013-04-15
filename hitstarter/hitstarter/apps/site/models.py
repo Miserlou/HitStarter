@@ -66,9 +66,9 @@ class Project(models.Model):
                                     blank=True,
                                     null=True)  
 
-    #stripe_amount = models.IntegerField(_('Stripe Amount'), 
-    #                                default=0,
-    #                                )  
+    stripe_amount = models.IntegerField(_('Stripe Amount'), 
+                                    default=0,
+                                    )  
 
 
     target = models.IntegerField()
