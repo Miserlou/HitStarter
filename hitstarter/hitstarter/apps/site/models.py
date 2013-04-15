@@ -66,6 +66,10 @@ class Project(models.Model):
                                     blank=True,
                                     null=True)  
 
+    btc_amount = models.IntegerField(_('BTC Amount'), 
+                                    default=0,
+                                    )  
+
     stripe_amount = models.IntegerField(_('Stripe Amount'), 
                                     default=0,
                                     )  

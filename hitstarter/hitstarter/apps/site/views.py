@@ -18,6 +18,7 @@ from django.db import connection, transaction
 from hitstarter.apps.site.models import Project
 import hitstarter.apps.site.models as projects
 
+import random
 import requests
 import stripe
 
@@ -27,6 +28,7 @@ def home(request):
 
     return render_to_response('index.html', {
         'projects': featured_projects,
+        'home': True,
         'is_onion': is_onion(request)
         },
         context_instance=RequestContext(request))
@@ -38,14 +40,18 @@ def project(request, project_id):
 
     project = projects.get_project_by_id(project_id)
 
-    raised = '0'
+    raised = (project.stripe_amount / 7500) + project.btc_amount
 
-    res  = requests.get('https://coinbase.com/api/v1/account/balance?api_key=%s' % settings.COINBASE_API_KEY)     
-    try:
-        raised = res.json()['amount']
-        raised = raised + (project.stripe_amount / 7500)
-    except Exception, e:
-        raised = 0 + (project.stripe_amount / 7500)
+    if random.randrange(0,9) < 1:
+        res  = requests.get('https://coinbase.com/api/v1/account/balance?api_key=%s' % settings.COINBASE_API_KEY)     
+        try:
+            raised = res.json()['amount']
+            raised = raised + (project.stripe_amount / 7500)
+
+            project.btc_amount = res.json()['amount']
+            project.save()
+        except Exception, e:
+            pass
 
     if django_settings.DEBUG:
         api_key = settings.STRIPE_DEBUG_API_KEY
